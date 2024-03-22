@@ -4,7 +4,7 @@ su
 pacman -Syu git
 git clone https://github.com/irorll/archasennus
 
-aja sopiva scripti
+chomod +x aja sopiva scripti
 
 exit
 
