@@ -3,7 +3,7 @@ asenna arch ja siihen git (ja i3wm tietysti)
 su
 git clone https://github.com/irorll/arch
 
-chomod +x aja sopiva scripti
+chmod +x aja sopiva scripti
 
 exit, poistu su:sta
 
