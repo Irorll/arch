@@ -197,7 +197,7 @@ bindsym $mod+Mod1+Shift+x exec shutdown now
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+p exec firefox --private-window
 
-
+exec redshift -O 3000
 bindsym $mod+o exec redshift -O 3000
 bindsym $mod+Shift+o exec redshift -x
 
