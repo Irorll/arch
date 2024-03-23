@@ -1,15 +1,13 @@
-asenna arch
+asenna arch ja siihen git
 
 su
-pacman -Syu git
-git clone https://github.com/irorll/archasennus
+git clone https://github.com/irorll/arch
 
 chomod +x aja sopiva scripti
 
-exit
+exit, poistu su:sta
 
 asenna paru (älä tee super userina!)
 
-(conffaa irssi)
-
+conffaa firefox ja irssi jnejne tarvittavat
 valmis ..kai
