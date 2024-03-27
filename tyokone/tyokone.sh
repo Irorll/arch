@@ -14,3 +14,5 @@ cp vimrc /etc/
 echo "w /sys/class/graphics/fbcon/cursor_blink - - - - 0" | sudo tee /etc/tmpfiles.d/cursor_blink.conf
 
 pacman -Syu firefox vim redshift caja dosfstools ntfs-3g less arandr evince pavucontrol speedtest-cli feh htop neofetch flatpak picom gnome-disk-utility calcurse vlc yt-dlp ytfzf fzf mpv base-devel git links pamixer innoextract acpi --noconfirm
+
+pacman -Scc
