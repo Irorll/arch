@@ -11,6 +11,15 @@ cp .Xresources /home/irorll
 rm /etc/vimrc
 cp vimrc /etc/
 
+rm /home/irorll/.bashrc
+cp .bashrc /home/irorll/
+
+cp .wifi2g /home/irorll/
+cp .wifi5g /home/irorll/
+
+chmod +x /home/irorll/.wifi2g.sh
+chmod +x /home/irorll/.wifi5g.sh
+
 echo "w /sys/class/graphics/fbcon/cursor_blink - - - - 0" | sudo tee /etc/tmpfiles.d/cursor_blink.conf
 
 pacman -Syu firefox vim redshift caja dosfstools ntfs-3g less arandr irssi evince steam pavucontrol qbittorrent speedtest-cli nethack feh htop neofetch flatpak picom gnome-disk-utility calcurse vlc yt-dlp ytfzf fzf mpv obs-studio audacity tenacity base-devel git links dosbox pamixer innoextract acpi --noconfirm
