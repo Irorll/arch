@@ -1,2 +1,3 @@
 #!/bin/bash
-iwctl station wlan0 connect DNA-Mokkula-5G-JA11NT
+/home/irorll/.wifiscan.sh
+/home/irorll/.wificonnect5.sh
