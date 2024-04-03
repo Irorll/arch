@@ -209,3 +209,5 @@ bindsym $mod+Mod1+Shift+a exec /home/irorll/.screenlayout/vaaka.sh
 exec_always --no-startup-id exec xset s off -dpms
 
 bindsym Mod1+Shift+t exec xterm
+
+exec_always --no-startup-id exec iwctl station wlan0 scan
