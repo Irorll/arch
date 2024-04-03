@@ -7,7 +7,7 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-PS1?'[\u@\h \W]\$ '
+PS1='[\u@\h \W]\$ '
 
 alias wifi2g='/home/irorll/.wifi2g.sh'
 alias wifi5g='/home/irorll/.wifi5g.sh'

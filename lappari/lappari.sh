@@ -14,8 +14,8 @@ cp vimrc /etc/
 rm /home/irorll/.bashrc
 cp .bashrc /home/irorll/
 
-cp .wifi2g /home/irorll/
-cp .wifi5g /home/irorll/
+cp .wifi2g.sh /home/irorll/
+cp .wifi5g.sh /home/irorll/
 
 chmod +x /home/irorll/.wifi2g.sh
 chmod +x /home/irorll/.wifi5g.sh
