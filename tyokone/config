@@ -210,4 +210,4 @@ exec_always --no-startup-id exec xset s off -dpms
 
 bindsym Mod1+Shift+t exec xterm
 
-shutdown 17:50
+exec shutdown 17:50
