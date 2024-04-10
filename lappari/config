@@ -191,7 +191,7 @@ bar {
         status_command i3status
 }
 
-exec --no-startup-id /home/irorll/.screenlayout/vaaka.sh
+exec --no-startup-id $HOME/.screenlayout/vaaka.sh
 
 bindsym $mod+Mod1+Shift+x exec shutdown now
 bindsym $mod+Shift+f exec firefox
@@ -204,7 +204,7 @@ bindsym $mod+Shift+o exec redshift -x
 focus_follows_mouse no
 mouse_warping none
 
-bindsym $mod+Mod1+Shift+a exec /home/irorll/.screenlayout/vaaka.sh
+bindsym $mod+Mod1+Shift+a exec $HOME/.screenlayout/vaaka.sh
 
 exec_always --no-startup-id exec xset s off -dpms
 

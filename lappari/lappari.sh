@@ -1,30 +1,30 @@
 #!/bin/sh
 
 rm .config/i3/config
-cp config /home/irorll/.config/i3/
+cp config $HOME/.config/i3/
 
 rm /etc/i3status.conf
 cp i3status.conf /etc/
 
-cp .Xresources /home/irorll
+cp .Xresources $HOME
 
 rm /etc/vimrc
 cp vimrc /etc/
 
-rm /home/irorll/.bashrc
-cp .bashrc /home/irorll/
+rm $HOME/.bashrc
+cp .bashrc $HOME/
 
-cp .wifi2g.sh /home/irorll/
-cp .wifi5g.sh /home/irorll/
-cp .wifiscan.sh /home/irorll/
-cp .wificonnect2.sh /home/irorll/
-cp .wificonnect5.sh /home/irorll/
+cp .wifi2g.sh $HOME/
+cp .wifi5g.sh $HOME/
+cp .wifiscan.sh $HOME/
+cp .wificonnect2.sh $HOME/
+cp .wificonnect5.sh $HOME/
 
-chmod +x /home/irorll/.wifi2g.sh
-chmod +x /home/irorll/.wifi5g.sh
-chmod +x /home/irorll/.wifiscan.sh
-chmod +x /home/irorll/.wificonnect2.sh
-chmod +x /home/irorll/.wificonnect5.sh
+chmod +x $HOME/.wifi2g.sh
+chmod +x $HOME/.wifi5g.sh
+chmod +x $HOME/.wifiscan.sh
+chmod +x $HOME/.wificonnect2.sh
+chmod +x $HOME/.wificonnect5.sh
 
 echo "w /sys/class/graphics/fbcon/cursor_blink - - - - 0" | sudo tee /etc/tmpfiles.d/cursor_blink.conf
 

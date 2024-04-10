@@ -1,12 +1,12 @@
 #!/bin/sh
 
 rm .config/i3/config
-cp config /home/irorll/.config/i3/
+cp config $HOME/.config/i3/
 
 rm /etc/i3status.conf
 cp i3status.conf /etc/
 
-cp .Xresources /home/irorll
+cp .Xresources $HOME
 
 rm /etc/vimrc
 cp vimrc /etc/
