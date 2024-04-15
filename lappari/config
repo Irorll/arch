@@ -210,4 +210,9 @@ exec_always --no-startup-id exec xset s off -dpms
 
 bindsym Mod1+Shift+t exec xterm
 
-exec_always --no-startup-id exec iwctl station wlan0 scan
+exec_always --no-startup-id exec iwctl station wlan0 scan 
+
+
+bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym $mod+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym $mod+XF86AudioMicMute exec --no-startup-id pamixer --set-volume 100 && $refresh_i3status
