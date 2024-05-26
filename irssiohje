@@ -1,0 +1,11 @@
+hae token https://twitchapps.com/tmi/
+
+/network add -nick nimesitähän Twitch
+
+/server add -auto -network Twitch irc.chat.twitch.tv 6667 oauth:
+
+/network add Twich
+
+
+jossei yhdistä käynnistäessä:
+/connect twitch
