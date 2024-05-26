@@ -6,6 +6,8 @@ hae token https://twitchapps.com/tmi/
 
 /network add Twich
 
+tosta välistä ehkä puuttuu jotain, kunnei taho yhdistää käynnistäessä enää
 
-jossei yhdistä käynnistäessä:
+
+käynnistäessä:
 /connect twitch
