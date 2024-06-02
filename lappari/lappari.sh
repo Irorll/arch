@@ -38,4 +38,3 @@ iwctl station wlan0 scan
 echo "All installed. Clean cashe?"
 
 pacman -Scc
-

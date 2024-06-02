@@ -21,4 +21,3 @@ cp picom.conf /etc/xdg/
 echo "All installed. Clean cashe?"
 
 pacman -Scc
-
