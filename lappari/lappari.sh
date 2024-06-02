@@ -1,30 +1,30 @@
 #!/bin/bash
 
-rm ~/.config/i3/config
-cp config $HOME/.config/i3/
+rm /home/$USER/.config/i3/config  #su:n home ei ole sama kuin normikäyttäjän home, huom!
+cp config /home/$USER/.config/i3/
 
 rm /etc/i3status.conf
 cp i3status.conf /etc/
 
-cp .Xresources $HOME
+cp .Xresources /home/$USER/
 
 rm /etc/vimrc
 cp vimrc /etc/
 
-rm $HOME/.bashrc
-cp .bashrc $HOME/
+rm /home/$USER/.bashrc
+cp .bashrc /home/$USER/
 
-cp .wifi2g.sh $HOME/
-cp .wifi5g.sh $HOME/
-cp .wifiscan.sh $HOME/
-cp .wificonnect2.sh $HOME/
-cp .wificonnect5.sh $HOME/
+cp .wifi2g.sh /home/$USER/
+cp .wifi5g.sh /home/$USER/
+cp .wifiscan.sh /home/$USER/
+cp .wificonnect2.sh /home/$USER/
+cp .wificonnect5.sh /home/$USER/
 
-chmod +x $HOME/.wifi2g.sh
-chmod +x $HOME/.wifi5g.sh
-chmod +x $HOME/.wifiscan.sh
-chmod +x $HOME/.wificonnect2.sh
-chmod +x $HOME/.wificonnect5.sh
+chmod +x /home/$USER/.wifi2g.sh
+chmod +x /home/$USER/.wifi5g.sh
+chmod +x /home/$USER/.wifiscan.sh
+chmod +x /home/$USER/.wificonnect2.sh
+chmod +x /home/$USER/.wificonnect5.sh
 
 echo "w /sys/class/graphics/fbcon/cursor_blink - - - - 0" | sudo tee /etc/tmpfiles.d/cursor_blink.conf
 
