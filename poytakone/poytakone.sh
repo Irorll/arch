@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-rm $HOME/.config/i3/config
+rm ~/.config/i3/config
 cp config $HOME/.config/i3/
 
 rm /etc/i3status.conf
