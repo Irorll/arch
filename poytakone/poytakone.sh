@@ -18,6 +18,6 @@ pacman -Syu firefox vim redshift caja dosfstools ntfs-3g less arandr irssi evinc
 rm /etc/xdg/picom.conf
 cp picom.conf /etc/xdg/
 
-echo "All installed. Clean cashe?"
+//echo "All installed. Clean cashe?"
 
-pacman -Scc
+yes | pacman -Scc

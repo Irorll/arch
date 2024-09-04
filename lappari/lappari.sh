@@ -35,6 +35,6 @@ cp picom.conf /etc/xdg/
 
 iwctl station wlan0 scan
 
-echo "All installed. Clean cashe?"
+//echo "All installed. Clean cashe?"
 
-pacman -Scc
+yes | pacman -Scc
