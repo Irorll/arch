@@ -1,13 +1,17 @@
-hae token https://twitchapps.com/tmi/
+1. hae token https://twitchapps.com/tmi/
 
-/network add -nick nimesitähän Twitch
+2. /network add -nick nimesitähän Twitch
 
-/server add -auto -network Twitch irc.chat.twitch.tv 6667 oauth:
+3. /server add -auto -network Twitch irc.chat.twitch.tv 6667 oauth:
 
-/network add Twich
+	// ei tätä /network add Twich
+
+4. /connect Twitch
+
+5. /quit ja käynnistä uuestaan
 
 tosta välistä ehkä puuttuu jotain, kunnei taho yhdistää käynnistäessä enää
 
 
-käynnistäessä:
-/connect twitch
+käynnistäessä
+/connect Twitch  jossei muuten toimi
