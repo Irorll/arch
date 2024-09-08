@@ -193,6 +193,8 @@ bar {
 
 exec --no-startup-id $HOME/.screenlayout/vaaka.sh
 
+exec --no-startup-id feh --bg-scale /home/$USER/.black.png
+
 bindsym $mod+Mod1+Shift+x exec shutdown now
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+p exec firefox --private-window
