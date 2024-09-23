@@ -21,6 +21,6 @@ feh --bg-scale /home/$USER/.black.png
 rm /etc/xdg/picom.conf
 cp picom.conf /etc/xdg/
 
-//echo "All installed. Clean cashe?"
+//echo "All installed. Clean cashe?" 
 
 yes | pacman -Scc
