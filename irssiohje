@@ -15,3 +15,8 @@ tosta välistä ehkä puuttuu jotain, kunnei taho yhdistää käynnistäessä en
 
 käynnistäessä
 /connect Twitch  jossei muuten toimi
+
+sitte
+/hilight
+/set paste_detect_time 100msecs
+/set paste_verify_line_count 1
