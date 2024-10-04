@@ -251,7 +251,7 @@ bindsym $mod+Shift+a exec arandr
 
 #xterm 1 and 6 
 bindsym $mod+Return workspace $ws1 exec xterm
-bindsym $mod+Mod1+Return workspace $ws6 exec xterm
+bindsym $mod+Shift+Return workspace $ws6 exec xterm
 
 #browser 2 and 7
 bindsym $mod+Shift+f workspace $ws2 exec librewolf
