@@ -241,7 +241,9 @@ bindsym $mod+Shift+o exec redshift -x
 focus_follows_mouse no
 mouse_warping none
 
-bindsym $mod+Mod1+Shift+a exec $HOME/.screenlayout/vaaka.sh
+bindsym $mod+Mod1+1 exec $HOME/.screenlayout/yksi.sh
+bindsym $mod+Mod1+2 exec $HOME/.screenlayout/vaaka.sh
+
 
 exec_always --no-startup-id exec xset s off -dpms
 
