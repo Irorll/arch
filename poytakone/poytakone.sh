@@ -21,6 +21,8 @@ feh --bg-scale /home/$USER/.black.png
 rm /etc/xdg/picom.conf
 cp picom.conf /etc/xdg/
 
+echo "MAKEFLAGS=\"-j$(nproc)\"" >> /etc/makepkg.conf
+
 //echo "All installed. Clean cashe?" 
 
 yes | pacman -Scc
