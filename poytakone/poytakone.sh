@@ -22,6 +22,8 @@ rm /etc/xdg/picom.conf
 cp picom.conf /etc/xdg/
 
 echo "MAKEFLAGS=\"-j$(nproc)\"" >> /etc/makepkg.conf
+i3-msg restart
+i3-msg reload
 
 //echo "All installed. Clean cashe?" 
 

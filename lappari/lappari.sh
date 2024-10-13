@@ -39,6 +39,8 @@ cp picom.conf /etc/xdg/
 iwctl station wlan0 scan
 
 echo "MAKEFLAGS=\"-j$(nproc)\"" >> /etc/makepkg.conf
+i3-msg restart
+i3-msg reload
 
 //echo "All installed. Clean cashe?"
 
