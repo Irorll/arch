@@ -1,17 +1,10 @@
-asenna arch ja siihen git (ja i3wm tietysti)
+asenna arch, i3wm ja git 
 
-su
 git clone https://github.com/irorll/arch
 
-chmod +x aja sopiva scripti
+su
+chmod +x haluttu scripti ja aja se
 
 exit, poistu su:sta
 
-asenna paru (älä tee super userina!)
-
-conffaa firefox ja irssi jnejne tarvittavat
-valmis ..kai
-
-btw älä usko kansioissa olevia ohjeita, en jaksa korjata niitä..  
-
-sdffsfsd
+asenna paru ja/tai yay (älä tee super userina!)
