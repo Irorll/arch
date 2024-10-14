@@ -2,21 +2,16 @@
 
 2. /network add -nick nimesitähän Twitch
 
-3. /server add -auto -network Twitch irc.chat.twitch.tv 6667 oauth:
-
-	// ei tätä /network add Twich
+3. /server add -auto -network Twitch irc.chat.twitch.tv 6667 oauth:xxxxxxjne
 
 4. /connect Twitch
 
 5. /quit ja käynnistä uuestaan
 
-tosta välistä ehkä puuttuu jotain, kunnei taho yhdistää käynnistäessä enää
 
 
-käynnistäessä
-/connect Twitch  jossei muuten toimi
 
-sitte
+
 /hilight
 /set paste_detect_time 100msecs
 /set paste_verify_line_count 1
