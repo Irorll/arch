@@ -1,15 +1,10 @@
-asenna arch
+asenna arch, i3wm ja git 
+
+git clone https://github.com/irorll/arch
 
 su
-pacman -Syu git
-git clone https://github.com/irorll/archasennus
+chmod +x haluttu scripti ja aja se
 
-aja sopiva scripti
+exit, poistu su:sta
 
-exit
-
-asenna paru (älä tee super userina!)
-
-(conffaa irssi)
-
-valmis ..kai
+asenna paru ja/tai yay (älä tee super userina!)
