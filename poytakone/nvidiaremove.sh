@@ -1,6 +1,6 @@
 #!/bin/sh
 
-pacman -R nvidia nvidia-utils nvidia-settings
+pacman -Rns nvidia nvidia-utils nvidia-settings
 
 rm /etc/mkinitcpio.conf
 cp mkinitcpioei.conf /etc/mkinitcpio.conf
