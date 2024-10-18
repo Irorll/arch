@@ -274,3 +274,7 @@ bindsym $mod+Mod1+Shift+u resize grow height 345
 bindsym $mod+F4 exec --no-startup-id pamixer --set-volume 80 && $refresh_i3status
 
 bindsym $mod+Shift+m workspace $ws9 exec feh -F ~/.black.png
+
+bindsym $mod+mod1+Shift+k exec flameshot full
+
+bindsym $mod+n exec nemo
