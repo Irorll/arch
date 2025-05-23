@@ -1,0 +1,10 @@
+sudo vim .bashrc
+
+export PATH="$HOME/.jotain/jotain:$PATH"
+
+save and quit
+
+source .bashrc
+
+
+kai..?
