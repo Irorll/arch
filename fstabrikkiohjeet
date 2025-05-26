@@ -1,0 +1,16 @@
+boottaa live arch
+loadkeys fi
+sudo -i
+fdisk -l    
+eti mihin linux on asennettu, tässä esim sda1
+mount /dev/sda1 /mnt
+mount --bind /dev /mnt/dev
+mount --bind /dev/pts /mnt/dev/pts
+mount --bind /sys /mnt/sys
+mount --bind /proc /mnt/proc
+arch-chroot /mnt
+
+sit korjaat 
+vim /etc/fstab vai missä ikinä
+
+
