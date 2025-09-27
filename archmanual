@@ -1,0 +1,76 @@
+loadkeys fi
+iwctl jne
+
+osioi kovo
+cfdisk, gpt jos kysyy alussa
+sda1 boot 4G 		mkfs.fat -F 32 /dev/sda1
+sda2 swap 8G    	mkswap /dev/sda2 ja swapon /dev/sda2 
+sda3 root			mkfs.ext4 /dev/sda3
+
+mounttaa osiot
+mount /dev/sda3 /mnt
+mount --mkdir /dev/sda1 /mnt/boot/efi
+
+asenna softia /mnt
+pacstrap -K /mnt base linux linux-firmware sof-firmware vim iwd networkmanager dhcpcd sudo base-devel grub efibootmgr
+
+generoi fstab
+genfstab /mnt > /mnt/etc/fstab
+
+chroottaa 
+arch-chroot /mnt
+
+laita aikavyöhyke jne
+ln -sf /usr/share/zoneinfo/Europe/Helsinki /etc/localtime
+hwclock --systohc
+vim /etc/locale.gen epäkommentoi haluttu, en_US.UTF-8 tms
+locale-gen
+vim /etc/locale.conf 
+	LANG=en_US.UTF-8 tai suomi tms
+
+näppisleiska suomalaiseksi
+vim /etc/vconsole.conf
+	KEYMAP=fi
+
+käyttäjänimi ja passut ja sudoryhmä
+vim /etc/hostname
+	koneennimi
+passwd
+useradd -m -G wheel -s /bin/bash käyttäjännimi
+passwd käyttäjännimi
+EDITOR=vim visudo epäkommentoi %wheel ALL=(ALL) ALL
+
+nettijuttuja
+systemctl enable NetworkManager
+exit
+cp /etc/resolve.conf /mnt/etc/resolve.conf
+arch-chroot /mnt
+
+bootloaderjuttuja
+grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+
+exit
+umount -a
+reboot
+
+tää vaihe on vähän mystinen paska..
+sudo systemctl enable iwd
+sudo systemctl enable NetworkManager
+sudo dhcpcd
+iwctl jnejne
+jossei toimi killall iwd ja iwctl ja networkmanager ja koita uusiks, kyl se siitä ehkä
+
+
+#tätä vaihetta ei tarvi jos kopioit resolve.confin
+#netti jne DNS-juttuja
+#/etc/resolve.conf lisää loppuun
+#nameserver 127.0.0.53
+#options edns0 trust-ad
+#search .
+
+asenna DE ja DM, esim
+sudo pacman -S plasma ly(tai lightdm, sddm tms..) konsole(tms)
+systemctl enable --now ly
+
+plasma toimii wifi helpommin, xfc4 pitää joka kerta sudo dhcpcd
