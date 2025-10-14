@@ -1,0 +1,191 @@
+ohjeita tonyn videosta ..ja muualta
+
+asenna LANissa jos vaan mitenkään mahdollista
+
+ jos wifi
+ip link
+net-setup wlp3s0taijokumuu
+
+ fdisk (nää ei oo komentoja, huom)
+ /dev/sda1 EFI System, mkfs.fat -F 32
+ /dev/sda2 Linux swap, mkswap ja swapon  
+ /dev/sda3 Linux root (x86-64), mkfs.ext4 tai muu
+
+date MMDDhhmmYYYY
+
+cd /mnt/gentoo
+links https://www.gentoo.org/downloads/mirrors
+releases - amd64(esim) - autobuilds - joku - suurin
+ lataa haluttu stage3, d lataa
+
+tar xpvf stage3filu --xattrs-include='*.*' --numeric-owner
+
+rm -rf stage3filu, vaikka
+
+ lisää /mnt/gentoo/etc/portage/make.conf :n perään
+"
+MAKEOPTS="-march=native -j6 -l6" ja
+USE="-systemd -kde -gnome" jnejne
+"
+ natiivi vain jos compilaat koneella x itselleen ja
+ josset asenna binaarikerneliä
+ -j on threadien määrä, tai RAM/2, niistä pienempi
+ -l on sama tai yksi enemmän, kai..
+
+cp --dereference /etc/resolv.conf /mnt/gentoo/etc
+
+
+mount --types proc /proc /mnt/gentoo/proc
+
+mount --rbind /sys /mnt/gentoo/sys
+mount --make-rslave /mnt/gentoo/sys
+
+mount --rbind /dev /mnt/gentoo/dev
+mount --make-rslave /mnt/gentoo/dev
+
+mount --bind /run /mnt/gentoo/run
+mount --make-slave /mnt/gentoo/run 
+
+
+chroot /mnt/gentoo /bin/bash
+source /etc/profile
+export PS1="(ch) $PS1"  ei pakollinen, hyödyllinen
+
+mount --mkdir /dev/sda1 /boot/efi
+
+emerge-webrsync
+
+emerge --oneshot app-portage/mirrorselect
+mirrorselect -i -o >> /etc/portage/make.conf
+
+eselect profile list | less
+eselect profile set numero
+
+emerge --sync -q
+
+emerge --verbose --update --deep --changed-use @world
+
+emerge -q vim neofetch fastfetch dhcpcd lm-sensors acpi jos wifi myös networkmanager nm-applet iwd wpa_supplicant sudo grub efibootmgr    ..rivillä 166 lisää, voinee asentaa tässä kohtaa nekin 
+
+
+ln -sf ../usr/share/zoneinfo/Europe/Helsinki/ /etc/localtime
+
+vim /etc/locale.gen
+ poista kommentti
+
+locale-gen
+
+eselect locale list
+eselect locale set numero
+
+env-update && source /etc/profile && export PS1="(ch) $PS1"
+
+
+ joko
+echo 'sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE' | tee -a /etc/portage/package.license
+
+ tai
+ lisää /etc/portage/make.conf :iin
+ ACCEPT_LICENSE="*"
+
+emerge -q sys-kernel/linux-firmware
+emerge -q sys-firmware/sof-firmware
+
+
+ tähän väliin tulis kernelin conffaus..
+ tai sit asenna binaarikerneli
+
+...
+
+echo "sys-kernel/installkernel dracut" >> /etc/portage/package.use/isntallkernel
+
+emerge -q sys-kernel/installkernel
+
+emerge -q sys-kernel/gentoo-kernel-bin
+
+blkik
+ ota PARTUUID:t talteen
+vim /etc/fstab
+
+ noudata formaattia, tabien määrä pitää olla oikein
+ PARTUUID voi korvata /dev/sdxx (esim /dev/sda1),
+ jos et aio vaihtaa kovoa/kovoja koskaan
+
+esim
+PARTUUID=xx 2tab /boot/efi 1tab vfat 2tab defaults 1tab 0 2 
+PARTUUID=xx 2tab none 2tab swap 2tab sw 2tab 0 0 
+PARTUUID=xx 2tab / 2tab ext4 2tab noatime 2tab 0 1
+
+
+vim /etc/conf.f/hostname    laita koneen nimi
+vim /etc/hosts				
+ kopioi 127.0.0.1 rivi ja laita koneennimi localhostin tilalle toiseen
+
+
+emerge -q --noreplace net-misc/netifrc
+
+ifconfig
+ ota interfacen nimi muistiin, esim enp0s25
+
+vim /etc/conf.d/net
+ lisää config_enp0s25="dhcp"	tohon se oma
+
+cd /etc/init.d
+ln -s net.lo net.enp0s25	  pikkuälliä, ei ykkösiä
+rc-update add net.enp0s25 default
+
+passwd
+useradd -m -G users,wheel,audio,video,usb,cdrom,floppy -s /bin/bash nimesitähän
+passwd nimesitähän
+
+EDITOR=vim visudo
+ poista kommentti %wheel ALL=(ALL:ALL) ALL
+
+cd
+
+echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf
+
+ jos näitä ei oo vielä, asenna
+emerge -q sys-boot/grup efibootmgr
+
+grub-install --efi-directory=/boot/efi
+grub-mkconfig -o /boot/grub/grub.cfg
+
+exit
+cd
+umount -R /mnt/gentoo
+reboot
+
+
+
+touch /etc/portage/package.use/xorg
+sudo echo 'sys-auth/pambase elogind' | sudo tee -a /etc/portage/package.use/xorg
+sudo echo 'media-libs/libglvnd X' | sudo tee -a /etc/portage/package.use/xorg
+sudo echo 'net-wireless/wpa-supplicant dbus' | sudo tee -a /etc/portage/package.use/xorg
+
+sudo emerge -q xorg-server x11-apps/xinit x11-apps/xrandr x11-drivers/xf86-video-vesa elogind dev-vcs/git
+
+sudo emerge -q dwm st sys-apps/dbus
+
+
+ joko tee vimillä tai
+touch .xinitrc
+echo 'exec dwm' >> .xinitrc
+
+vim /etc/conf.d/keymaps/      vaiha fi
+sudo rc-service keymaps restart
+sudo rc-update add keymaps boot
+
+
+sudo rc-update add NetworkManager default
+sudo reboot
+
+
+startx
+
+
+x11-wm/i3 xterm dmenu
+
+
+
+
