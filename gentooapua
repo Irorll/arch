@@ -35,6 +35,9 @@ USE="-systemd -kde -gnome" jnejne
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc
 
 
+
+voiko tän sijaan käyttää arch-chroot???
+
 mount --types proc /proc /mnt/gentoo/proc
 
 mount --rbind /sys /mnt/gentoo/sys
