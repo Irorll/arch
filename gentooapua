@@ -151,6 +151,7 @@ echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf
  jos näitä ei oo vielä, asenna
 emerge -q sys-boot/grup efibootmgr
 
+(vai grub-install /dev/sda)???
 grub-install --efi-directory=/boot/efi
 grub-mkconfig -o /boot/grub/grub.cfg
 
