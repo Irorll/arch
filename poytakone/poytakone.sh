@@ -13,7 +13,7 @@ cp vimrc /etc/
 
 echo "w /sys/class/graphics/fbcon/cursor_blink - - - - 0" | sudo tee /etc/tmpfiles.d/cursor_blink.conf
 
-pacman -Syu firefox vim redshift dosfstools ntfs-3g less arandr irssi evince pavucontrol qbittorrent speedtest-cli nethack feh htop flatpak picom gnome-disk-utility calcurse vlc yt-dlp ytfzf fzf mpv audacity tenacity base-devel git links dosbox pamixer innoextract acpi fastfetch imagemagick android-file-transfer nemo psensor flameshot mtpaint nitrogen libdvdcss krita --noconfirm
+pacman -Syu firefox vim redshift dosfstools ntfs-3g less arandr irssi evince pavucontrol qbittorrent speedtest-cli nethack feh htop flatpak picom gnome-disk-utility calcurse vlc yt-dlp ytfzf fzf mpv audacity tenacity base-devel git links dosbox pamixer innoextract acpi fastfetch imagemagick android-file-transfer nemo psensor flameshot mtpaint nitrogen libdvdcss krita xorg-xset --noconfirm
 
 magick -size 1920x1920 xc:#000000 /home/$USER/.black.png
 feh --bg-scale /home/$USER/.black.png
