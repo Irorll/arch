@@ -1,2 +1,6 @@
 mpv -vo tct tiedosto
+streamlink -v -p mpv -a '-vo tct --really-quiet' url
+ -v = --verbose-player tai --player-verbose
+ -p = player
+ -a = --player-args
 
