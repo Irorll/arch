@@ -8,3 +8,4 @@ rm *.{png, jpg, pdf} poistaa noi filetyypit
 ctrl z pausettaa tämänhetkisen prosessin
 fg unpause
 tee alias ja sit source~/.bashrc		
+!!:s^<old>^<new>  bang bang substitution
