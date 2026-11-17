@@ -1,0 +1,10 @@
+ctrl a alkuun, e loppuun
+ctrl w poistaa edellisen sanan
+ctrl u laittaa nykyisen kirjotettavan komennon talteen, y palauttaa
+echo {1..10} tulostaa 1 2 3 4 5 6 7 8 9 0
+echo {1..10..3} tulostaa 1 4 7 10
+echo {a..z} tulostaa aakkoset
+rm *.{png, jpg, pdf} poistaa noi filetyypit
+ctrl z pausettaa tämänhetkisen prosessin
+fg unpause
+tee alias ja sit source~/.bashrc		
